@@ -6,10 +6,10 @@ from bs4 import BeautifulSoup # pip3 install bs4 , pip3 install lxml
 import PTN #pip3 install parse-torrent-name ,Windows: pip install https://github.com/divijbindlish/parse-torrent-name/archive/master.zip
 from io import BytesIO
 from zipfile import ZipFile
-from rarfile import RarFile # pip3 install rarfile // Unrar should be installed
+from rarfile import RarFile # pip3 install rarfile // unrar kurulu olmalı
 
-# Handle imdb search code
-# Handle series Paket
+# imdb koduna göre arama ?
+# dizi sezon paketleri?
 
 class MovieFile:
 
@@ -67,7 +67,7 @@ class MovieFile:
 
         r = getWeb (url,'')
         source = BeautifulSoup(r,"lxml")    
-        # If 'arama' in <title> then this is search page. Select the correct movie name accordingly
+        # Eğer <title> içinde arama varsa, bu sayfa başlığa göre birden fazla sayfa bulmuştur.
         if 'arama' in source.title.string:
             subTopTable = source.find_all("div",{"style": "float:left;width:450px;"})
             for link in subTopTable:
@@ -83,7 +83,7 @@ class MovieFile:
         
         subTopTable = source.find("div",{"id": "altyazilar"})
         subTable = subTopTable.find_all("div",class_=None)
-        del subTable[-1] #Delete last item of None class divs, since it is empty
+        del subTable[-1] #None class div 'lerden sonuncusunu sil, boş geliyor
         for link in subTable:
             if self.seriesType: #Dizi
                 aa = link.find("div", class_="alcd").text.strip().replace("\n", "").replace("|", "")
@@ -169,12 +169,7 @@ def isUTF8(data):
         return True
    
 
-#root = '/Volumes/video/TV Show/Black Mirror (2011)/'
-#root = '/Volumes/video/dl/'
-#root = 'C:/Users/Erkan BALCI/OneDrive/Projects/TurkceAltyazi'
-#root ='/Volumes/video/TV Show/Counterpart (2017)'
-
-root = '/Volumes/video/'+sys.argv[1]
+root = sys.argv[1] #Aranacak dizin argument olarak girilir. python3 altyazi.py "/Volumes/Movies" gibi
 extPattern = [".mkv",".mp4",".avi"]
 
 print (root)
