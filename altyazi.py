@@ -1,3 +1,8 @@
+# v0.2
+# Düzeltme: Arama sayfası boş geldiğinde hata veriyor.
+# Yapılacak: Dosya ve dizin isimlerini düzelt; orjinal ismi txt dosyası olarak dizinde tut
+# v0.1
+# İlk yükleme
 import struct, os, sys
 import urllib.request, urllib.parse
 from urllib.error import URLError, HTTPError
@@ -75,29 +80,31 @@ class MovieFile:
                 print (link.text)
                 print ('\n')
                 searchCounter += 1
-            selectRight = input ('Lütfen Doğru Film/Dizinin Numarasını Giriniz (1):')
-            if selectRight == "":
-                selectRight = '1'  
-            r = getWeb (self.subDomain+subTopTable[int(selectRight)-1].find("a").attrs['href'],'')
-            source = BeautifulSoup(r,"lxml")
+            if searchCounter>1:
+                selectRight = input ('Lütfen Doğru Film/Dizinin Numarasını Giriniz (1):')
+                if selectRight == "":
+                    selectRight = '1'  
+                r = getWeb (self.subDomain+subTopTable[int(selectRight)-1].find("a").attrs['href'],'')
+                source = BeautifulSoup(r,"lxml")
         
         subTopTable = source.find("div",{"id": "altyazilar"})
-        subTable = subTopTable.find_all("div",class_=None)
-        del subTable[-1] #None class div 'lerden sonuncusunu sil, boş geliyor
-        for link in subTable:
-            if self.seriesType: #Dizi
-                aa = link.find("div", class_="alcd").text.strip().replace("\n", "").replace("|", "")
-                sezon = aa[1:3]
-                bolum = aa[-2:]
-                if (self.parsedSeason==sezon and self.parsedEpisode==bolum):
+        if subTopTable!=None:
+            subTable = subTopTable.find_all("div",class_=None)
+            del subTable[-1] #None class div 'lerden sonuncusunu sil, boş geliyor
+            for link in subTable:
+                if self.seriesType: #Dizi
+                    aa = link.find("div", class_="alcd").text.strip().replace("\n", "").replace("|", "")
+                    sezon = aa[1:3]
+                    bolum = aa[-2:]
+                    if (self.parsedSeason==sezon and self.parsedEpisode==bolum):
+                        found = True
+                        printInfo()
+                    counter += 1
+
+                else: #Film
                     found = True
                     printInfo()
-                counter += 1
-
-            else: #Film
-                found = True
-                printInfo()
-                counter += 1
+                    counter += 1
         if found:
             selectSub = input ('Lütfen İstediğiniz Altyazının Numarasını Giriniz'+'('+str(saveCounter)+')(0:Hiçbiri):')
             if selectSub == "0":
