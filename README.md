@@ -1,4 +1,4 @@
-# turkcealtyazi.org.script
+# turkcealtyazi.org script
 Film ve diziler için turkcealtyazi.org altyazı indirme Python scripti (Python3)
 
 # Kurulum:
