@@ -1,5 +1,5 @@
 # turkcealtyazi.org.script
-Film ve diziler için www.turkcealtyazi.org altyazı indirme Python3 scripti
+Film ve diziler için turkcealtyazi.org altyazı indirme Python3 scripti
 
 # Kurulum:
 Beautifulsoap, parse-torrent-name ve rarfile modülleri kurulu olmalıdır:
