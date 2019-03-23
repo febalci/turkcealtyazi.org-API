@@ -31,6 +31,7 @@ Sample Dizininde bulunan test.py, api kullanımına örnek olarak bulunmaktadır
 # API Kullanımı:
 ## solvename(dosyadizini,dosyaadı)
 İndirilen torrent dizi/film dosyasının isminde yer alan bilgilerden dizi/film hakkında bilgi edinir.
+
 solvename['dizi'] : Boolean
     Eğer dosya dizi dosyası ise 'True', film dosyası ise 'Movie' alır.
 solvename['isim'] : String
