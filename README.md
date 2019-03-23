@@ -31,51 +31,51 @@ Sample Dizininde bulunan test.py, api kullanımına örnek olarak bulunmaktadır
 # API Kullanımı:
 ### solvename(dosyadizini,dosyaadı)
 İndirilen torrent dizi/film dosyasının isminde yer alan bilgilerden dizi/film hakkında bilgi edinir.  
-solvename['dizi'] : Boolean  
+##### solvename['dizi'] : Boolean  
 &nbsp;&nbsp;Eğer dosya dizi dosyası ise 'True', film dosyası ise 'Movie' alır.  
-solvename['isim'] : String  
+##### solvename['isim'] : String  
 &nbsp;&nbsp;Dizi ya da Filmin ismi  
-solvename['grup'] :  
+##### solvename['grup'] :  
 &nbsp;&nbsp;Dosyayı rip yapan grubun ismi  
-solvename['sezon'] :  
+##### solvename['sezon'] :  
 &nbsp;&nbsp;Eğer dizi ise sezonu yer alır, film ise boştur.  
-solvename['bölüm'] :  
+##### solvename['bölüm'] :  
 &nbsp;&nbsp;Eğer dizi ise bölümü yer alır, film ise boştur.  
-solvename['yıl'] :  
+##### solvename['yıl'] :  
 &nbsp;&nbsp;Dizi/Film'in çekildiği yıl  
-solvename['dosyaismi'] :  
+##### solvename['dosyaismi'] :  
 &nbsp;&nbsp;Dosyanın ismi yer alır  
-solvename['dosyadizin'] :  
+##### solvename['dosyadizin'] :  
 &nbsp;&nbsp;Dosyanın dizini yer alır  
-solvename['imdbsayfa'] :  
+##### solvename['imdbsayfa'] :  
 &nbsp;&nbsp;Henüz kullanılmamaktadır  
 
 ### findSubPage(isim, Yıl)
 Dizi/Film için turkcealtyazi.org'da ilgili sayfayı bulur. Aramada birden fazla sayfa gelirse list oluşturur.  
-findSubPage[i]['isim'] :  
+##### findSubPage[i]['isim'] :  
 &nbsp;&nbsp;Dizi/Film'in adı yer alır  
-findSubPage[i]['sayfa'] :  
+##### findSubPage[i]['sayfa'] :  
 &nbsp;&nbsp;İlgili web sayfasının adresidir  
 
 ### listSubtitles(websayfası)
 Verilen turkcealtyazi.org Dizi/Film bilgi sayfası içinden tüm altyazı bilgilerini getirir. Aramada birden fazla sayfa gelirse list oluşturur.  
-listSubtitles[i]['dizi'] :  
+##### listSubtitles[i]['dizi'] :  
 &nbsp;&nbsp;Eğer altyazi dizi dosyası ise 'True', film dosyası ise 'Movie' alır.  
-listSubtitles[i]['dil'] :  
+##### listSubtitles[i]['dil'] :  
 &nbsp;&nbsp;Altyazının dili. Türkçe için 'tr', İngilizce için 'en'  
-listSubtitles[i]['gönderen'] :  
+##### listSubtitles[i]['gönderen'] :  
 &nbsp;&nbsp;Altyazıyı gönderen çevirmenin ismi  
-listSubtitles[i]['tarih'] :  
+##### listSubtitles[i]['tarih'] :  
 &nbsp;&nbsp;Altyazının gönderilme tarihi  
-listSubtitles[i]['fps'] :  
+##### listSubtitles[i]['fps'] :  
 &nbsp;&nbsp;Altyazının uyumlu olduğu fps  
-listSubtitles[i]['grup'] :  
+##### listSubtitles[i]['grup'] :  
 &nbsp;&nbsp;Altyazının uyumlu olduğu rip grubu  
-listSubtitles[i]['sezon'] :  
+##### listSubtitles[i]['sezon'] :  
 &nbsp;&nbsp;Altyazının ilgili dizi sezonu  
-listSubtitles[i]['bölüm'] :  
+##### listSubtitles[i]['bölüm'] :  
 &nbsp;&nbsp;Altyazının ilgili dizi bölümü  
-listSubtitles[i]['sayfa'] :  
+##### listSubtitles[i]['sayfa'] :  
 &nbsp;&nbsp;Altyazının bulunduğu turkcealtyazi.org web sayfası  
 
 ### downloadSub(websayfası)
