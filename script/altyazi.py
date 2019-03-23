@@ -1,6 +1,8 @@
+# v0.3
+# Düzeltme: Satır sonlarında Unix \n\r yerine windows \n kullanıldı. Apple TV Plex'te sorun yaratıyordu.
+# Yapılacak: Dosya ve dizin isimlerini düzelt; orjinal ismi txt dosyası olarak dizinde tut
 # v0.2
 # Düzeltme: Arama sayfası boş geldiğinde hata veriyor.
-# Yapılacak: Dosya ve dizin isimlerini düzelt; orjinal ismi txt dosyası olarak dizinde tut
 # v0.1
 # İlk yükleme
 import struct, os, sys
@@ -124,6 +126,7 @@ class MovieFile:
     def downloadTASubs(self,dlUrl):
         url = self.subDomain + dlUrl
         urldl = self.subDomain + '/ind'
+        print (urldl)
         subFileName = self.filePath + '/' + self.movieName +'.srt'
         
         r = getWeb (url,'')
@@ -148,7 +151,9 @@ class MovieFile:
                             f.write(line.decode("UTF-8")) 
                     else: # ISO8859-9
                         for line in zipfile.open(fileno).readlines():
-                            f.write(line[:-1].decode("ISO8859-9")+'\r\n')
+#                            f.write(line[:-1].decode("ISO8859-9")+'\r\n') #Unix style line ends
+                            f.write(line[:-1].decode("ISO8859-9")+'\n') #Windows style line ends
+
         
         return
     
