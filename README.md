@@ -30,33 +30,32 @@ Sample Dizininde bulunan test.py, api kullanımına örnek olarak bulunmaktadır
 
 # API Kullanımı:
 ## solvename(dosyadizini,dosyaadı)
-İndirilen torrent dizi/film dosyasının isminde yer alan bilgilerden dizi/film hakkında bilgi edinir.
-
-solvename['dizi'] : Boolean
-    Eğer dosya dizi dosyası ise 'True', film dosyası ise 'Movie' alır.
-solvename['isim'] : String
-    Dizi ya da Filmin ismi
-solvename['grup'] :
-    Dosyayı rip yapan grubun ismi
-solvename['sezon'] :
-    Eğer dizi ise sezonu yer alır, film ise boştur.
-solvename['bölüm'] :
-    Eğer dizi ise bölümü yer alır, film ise boştur.
-solvename['yıl'] :
-    Dizi/Film'in çekildiği yıl
-solvename['dosyaismi'] :
-    Dosyanın ismi yer alır
+İndirilen torrent dizi/film dosyasının isminde yer alan bilgilerden dizi/film hakkında bilgi edinir.  
+solvename['dizi'] : Boolean  
+    Eğer dosya dizi dosyası ise 'True', film dosyası ise 'Movie' alır.  
+solvename['isim'] : String  
+    Dizi ya da Filmin ismi  
+solvename['grup'] :  
+    Dosyayı rip yapan grubun ismi  
+solvename['sezon'] :  
+    Eğer dizi ise sezonu yer alır, film ise boştur.  
+solvename['bölüm'] :  
+    Eğer dizi ise bölümü yer alır, film ise boştur.  
+solvename['yıl'] :  
+    Dizi/Film'in çekildiği yıl  
+solvename['dosyaismi'] :  
+    Dosyanın ismi yer alır  
 solvename['dosyadizin'] :
-    Dosyanın dizini yer alır
+    Dosyanın dizini yer alır  
 solvename['imdbsayfa'] :
-    Henüz kullanılmamaktadır
+    Henüz kullanılmamaktadır  
 
 ## findSubPage(isim, Yıl)
-Dizi/Film için turkcealtyazi.org'da ilgili sayfayı bulur. Aramada birden fazla sayfa gelirse list oluşturur.
-findSubPage[i]['isim'] :
-    Dizi/Film'in adı yer alır
-findSubPage[i]['sayfa'] :
-    İlgili web sayfasının adresidir
+Dizi/Film için turkcealtyazi.org'da ilgili sayfayı bulur. Aramada birden fazla sayfa gelirse list oluşturur.  
+findSubPage[i]['isim'] :  
+    Dizi/Film'in adı yer alır  
+findSubPage[i]['sayfa'] :  
+    İlgili web sayfasının adresidir  
 
 ## listSubtitles(websayfası)
 Verilen turkcealtyazi.org Dizi/Film bilgi sayfası içinden tüm altyazı bilgilerini getirir. Aramada birden fazla sayfa gelirse list oluşturur.
