@@ -2,7 +2,7 @@
 Film ve diziler için turkcealtyazi.org altyazı indirme Python API (Python3)
 
 # Kurulum:
-Beautifulsoap, parse-torrent-name ve rarfile modülleri kurulu olmalıdır:
+Beautifulsoap, parse-torrent-name ve rarfile modülleri kurulu olmalıdır. Ayrıca sistemde unrar kurulu olmalıdır:
 
 ```pip3 install bs4```
 
@@ -50,7 +50,7 @@ solvename['dosyadizin'] :
 solvename['imdbsayfa'] :
     Henüz kullanılmamaktadır
 
-## findSubPage(İsim, Yıl)
+## findSubPage(isim, Yıl)
 Dizi/Film için turkcealtyazi.org'da ilgili sayfayı bulur. Aramada birden fazla sayfa gelirse list oluşturur.
 findSubPage[i]['isim'] :
     Dizi/Film'in adı yer alır
